@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
+import dotenv from "dotenv";
 
-export const { PORT = 3000 } = process.env;
+dotenv.config();
+
+export const { PORT = 3000, MONGODB_URI } = process.env;
 
 export const connectDB = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://jonathandajome:MH4dCwfGjJWGXiKd@cluster0.nknpqhn.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Cluster0"
-    );
+    await mongoose.connect(MONGODB_URI);
     console.log(`Database connected ${chalk.green.bold("✓")}`);
   } catch (err) {
     console.log(`Connection error ${chalk.red.bold(err)}`);
