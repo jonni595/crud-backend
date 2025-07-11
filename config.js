@@ -6,6 +6,10 @@ dotenv.config();
 
 export const { PORT = 3000, MONGODB_URI } = process.env;
 
+if (!MONGODB_URI) {
+  throw new Error("MONGODB_URI is not defined in the environment variables");
+}
+
 export const connectDB = async () => {
   try {
     await mongoose.connect(MONGODB_URI);
