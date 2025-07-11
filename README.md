@@ -22,3 +22,17 @@ This is a simple CRUD application built with the MERN stack (MongoDB, Express.js
    ```
 4. Start the server with `npm run dev`
 5. Open your browser and navigate to `http://localhost:3000` to access the application
+
+> [!IMPORTANT]
+> Configure your MongoDB connection in Atlas or your local MongoDB instance before running the application.
+
+## Usage
+
+1. Use Postman or any API client to interact with the RESTful API.
+2. The base URL for the API is `http://localhost:3000/api`.
+3. Available endpoints:
+   - `GET /products`: Retrieve all products
+   - `GET /products/:id`: Retrieve a single product by ID
+   - `POST /products`: Create a new product
+   - `PUT /products/:id`: Update a product by ID
+   - `DELETE /products/:id`: Delete a product by ID
